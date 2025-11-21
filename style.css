@@ -5,7 +5,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a;
+    background-color: #1a1a1a; /* Dunkler Hintergrund */
     color: #f0f0f0;
     line-height: 1.6;
 }
@@ -14,7 +14,7 @@ header {
     background-color: #000;
     padding: 15px 5%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    text-align: center; /* Logo zentrieren */
 }
 
 .logo {
@@ -22,20 +22,21 @@ header {
 }
 
 /* ================================================= */
-/* 2. Hauptlayout (Desktop)                        */
+/* 2. Hauptlayout (Desktop) - HIER IST DIE WICHTIGE ÄNDERUNG! */
 /* ================================================= */
 .hero-section {
-    display: flex;
+    display: flex; /* WICHTIG: Flexbox aktivieren */
     justify-content: space-between;
     align-items: flex-start;
     padding: 30px 5%;
-    flex-direction: row;
+    flex-direction: row; /* Zwingt den Inhalt auf den Desktop nach LINKS und das Formular nach RECHTS */
 }
 
 .content-container {
-    flex: 2;
+    flex: 2; /* Nimmt mehr Platz ein als das Formular */
     min-width: 300px;
-    order: 1; /* WICHTIG: Erscheint IMMER zuerst */
+    order: 1; /* Inhalt zuerst */
+    padding-right: 40px; /* Standardmäßig für LTR, wird für RTL angepasst */
 }
 
 /* RTL-Anpassung: Padding für den Inhalt */
@@ -64,17 +65,19 @@ header {
 }
 
 /* ================================================= */
-/* 3. USP-Sektion (Bilder und Text)                */
+/* 3. USP-Sektion (Bilder und Text) - HIER SIND AUCH WICHTIGE ÄNDERUNGEN! */
 /* ================================================= */
 .usp-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 40px;
+    justify-content: center; /* Zentriert die USP-Elemente */
 }
 
 .usp-item {
-    flex-basis: calc(33.33% - 13.333px);
+    flex-basis: calc(33.33% - 20px); /* 3er-Teilung mit 20px Gap, flex-basis reduziert */
+    max-width: 300px; /* Begrenzt die maximale Breite jeder USP-Box */
     padding: 0;
     line-height: 1.4;
     background-color: #2a2a2a;
@@ -89,23 +92,24 @@ header {
 /* USP BILDER */
 .usp-full-image {
     width: 100%;
-    height: 120px;
+    height: 140px; /* ETWAS HÖHER GEMACHT, damit der Text besser sitzt */
     object-fit: cover;
     border-radius: 8px 8px 0 0;
 }
 
 /* USP TEXTE */
 .usp-item p {
-    font-size: 0.9em;
+    font-size: 0.85em; /* ETWAS KLEINER GEMACHT */
     color: #f0f0f0;
-    padding: 10px 10px 15px 10px;
+    padding: 10px; /* Padding ringsum */
     width: 100%;
     text-align: center;
     box-sizing: border-box;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center; /* Vertikal zentrieren */
+    justify-content: center; /* Horizontal zentrieren */
     flex-grow: 1;
+    min-height: 60px; /* MINDESTHÖHE für den Textbereich */
 }
 
 /* ================================================= */
@@ -119,7 +123,7 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     height: fit-content;
-    order: 2; /* WICHTIG: Erscheint IMMER nach dem Inhalt (order: 1) */
+    order: 2; /* Formular zuletzt */
 }
 
 .cta-form-container h2 {
@@ -207,7 +211,7 @@ footer {
 /* ================================================= */
 @media (max-width: 900px) {
     .hero-section {
-        flex-direction: column;
+        flex-direction: column; /* Stapelt Inhalt (oben) und Formular (unten) */
     }
 
     .content-container {
@@ -227,10 +231,17 @@ footer {
     }
 
     .usp-item {
-        flex-basis: 100%;
+        flex-basis: 100%; /* USPs nehmen volle Breite ein */
+        max-width: 400px; /* Optional: maximale Breite für USP-Elemente auf Mobil */
     }
 
     .usp-full-image {
         height: 150px;
     }
+
+    .usp-item p {
+        font-size: 0.9em; /* Auf Mobil wieder etwas größer machen */
+        min-height: 50px; /* Mindesthöhe anpassen */
+    }
 }
+
