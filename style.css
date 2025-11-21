@@ -1,6 +1,6 @@
 /* Globale Stile & RTL-Anpassungen */
 body {
-    font-family: Arial, sans-serif; /* Platzhalter, sollte durch eine bessere Schriftart ersetzt werden */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #1a1a1a; /* dunkles Hintergrund */
@@ -12,11 +12,11 @@ header {
     background-color: #000;
     padding: 15px 5%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center; /* Logo zentrieren */
 }
 
 .logo {
-    max-height: 50px;
-    /* Da das Logo schwarz ist, passt es gut zu fast allen Designs */
+    max-height: 60px;
 }
 
 /* Hauptlayout mit Fokus auf das Formular */
@@ -25,18 +25,17 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     padding: 30px 5%;
-    flex-direction: row; /* <--- Dies stellt sicher, dass der Inhalt links steht */
+    flex-direction: row; /* Wichtig: Content links, Formular rechts */
 }
-
 
 .content-container {
     flex: 2; /* Nimmt mehr Platz ein als das Formular */
-    min-width: 300px; /* Stellt sicher, dass es auf kleinen Screens nicht zu schmal wird */
-    padding-right: 40px;
+    min-width: 300px;
+    padding-right: 40px; /* Wird für RTL umgekehrt */
 }
 
 .main-headline {
-    color: #FFD700; /* Tiefes Blau für Seriosität */
+    color: #FFD700;
     font-size: 2.5em;
     margin-bottom: 10px;
 }
@@ -48,12 +47,10 @@ header {
 }
 
 .media-placeholder {
-    background-color: #ddd;
     min-height: 350px;
     margin-bottom: 30px;
     border-radius: 8px;
     overflow: hidden;
-    /* Hier würden Sie Ihr Video oder Bild einfügen */
 }
 
 /* USPs */
@@ -65,29 +62,38 @@ header {
 }
 
 .usp-item {
-    flex-basis: calc(33.3% - 20px); /* Leicht vergrößert, um mehr Platz zu bieten */
-    padding: 20px 15px; /* Innenabstand vergrößert */
-    line-height: 1.4; /* Zeilenabstand für bessere Lesbarkeit */
-    min-height: 120px; /* Mindesthöhe für Einheitlichkeit */
-    /* ... restliche Stile ... */
+    flex-basis: calc(33.3% - 20px);
+    padding: 0;
+    line-height: 1.4;
+    background-color: #2a2a2a; /* Hintergrund für USP-Boxen */
+    border-radius: 8px;
+    overflow: hidden;
 }
-
 
 .usp-item p {
-    font-size: 0.95em; /* Macht den Text etwas kompakter */
-    margin: 0;
+    font-size: 0.9em;
+    margin: 0 10px 15px 10px; /* Abstand für den Text */
+    min-height: 3em; /* Stellt sicher, dass der Text auch bei zwei Zeilen nicht bricht */
 }
 
+/* USP BILDER */
+.usp-full-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+}
 
 /* CTA Formular */
 .cta-form-container {
-    flex: 1; /* Nimmt weniger Platz ein */
+    flex: 1;
     min-width: 280px;
     background-color: #2a2a2a;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    height: fit-content; /* Passt sich der Größe des Inhalts an */
+    height: fit-content;
 }
 
 .cta-form-container h2 {
@@ -104,13 +110,13 @@ form input {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Wichtig für korrekte Breite */
+    box-sizing: border-box;
 }
 
 .cta-button {
     width: 100%;
     padding: 15px;
-    background-color: #FFD700; /* Auffällige Akzent-Farbe */
+    background-color: #FFD700;
     color:#1a1a1a;
     font-size: 1.1em;
     font-weight: bold;
@@ -124,76 +130,21 @@ form input {
     background-color: #d8892d;
 }
 
-.form-hint {
-    text-align: center;
-    font-size: 0.9em;
-    color: #777;
-    margin-top: 15px;
-}
-
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #333; /* Dunklerer Rand */
     font-size: 0.8em;
     color: #777;
 }
 
-/* Media Query für Mobile (Stapelt die Sektionen) */
-@media (max-width: 900px) {
-    /* ... andere Regeln ... */
-.main-headline {
-        font-size: 2em; /* Verkleinert die Headline auf Handys, z.B. von 2.5em auf 2em */
-    }
-
-    .content-container {
-        padding-right: 0;
-        margin-bottom: 30px;
-    }
-
-    .cta-form-container {
-        width: 100%;
-        
-     margin-bottom: 30px;
-    }
-
-    .usp-item {
-        flex-basis: 100%;
-    }
-}
-
-/* Spezielle Anpassung für Arabisch (RTL-Unterstützung) */
-[dir="rtl"] .content-container {
-    padding-right: 0;
-    padding-left: 40px; /* Padding wird umgedreht */
-}
-
-<div class="usp-container">
-                <div class="usp-item">
-                    <img src="language_support.jpg" alt="Arabischsprachiger Support" class="usp-full-image">
-                    <p><strong>راحة اللغة الأم:</strong> إشراف ودعم عربي 100%.</p>
-                </div>
-                <div class="usp-item">
-                    <img src="family_mercedes.jpg" alt="Private V-Class Transfer" class="usp-full-image">
-                    <p><strong>رفاهية وخصوصية:</strong> فيلات ونقل خاص V-Class.</p>
-                </div>
-                <div class="usp-item">
-                    <img src="halal_food.jpg" alt="Halal-Essen Garantie" class="usp-full-image">
-                    <p><strong>تفاهم ثقافي:</strong> حلال مضمون واحترام كامل للاحتياجات.</p>
-                </div>
-            </div>
-
-}
 /* Styling für den WhatsApp QR-Code */
-
 .qr-code-block {
-    text-align: center; /* <-- DIESE ZEILE ZENTRIERT DEN INHALT */
+    text-align: center;
     margin-top: 25px;
     padding-top: 20px;
-    border-top: 1px solid #444; /* Angepasst an dunkles Design */
-}
-
+    border-top: 1px solid #444;
 }
 
 .qr-code-block h3 {
@@ -217,10 +168,42 @@ footer {
 
 .qr-hint {
     font-size: 0.85em;
-    color: #5cb85c; /* WhatsApp-Grün */
+    color: #5cb85c;
     margin-top: 10px;
-
 }
+
+/* Spezielle Anpassung für Arabisch (RTL-Unterstützung) */
+[dir="rtl"] .content-container {
+    padding-right: 0;
+    padding-left: 40px;
+}
+
+/* Media Query für Mobile (Stapelt die Sektionen) */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column; /* Stapelt Inhalt und Formular UNTEREINANDER */
+    }
+
+    .content-container {
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 30px;
+    }
+
+    .main-headline {
+        font-size: 2em;
+    }
+
+    .cta-form-container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .usp-item {
+        flex-basis: 100%; /* USPs nehmen volle Breite ein */
+    }
+}
+
 
 
 
