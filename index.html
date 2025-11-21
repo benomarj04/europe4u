@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Europe4you - إقامتكم الخاصة في جبال الألب</title>
+    <title>Europe4you - إقامتكم الخاصة والفاخرة في جبال الألب</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
 <body>
 
     <header>
@@ -13,6 +13,7 @@
     </header>
 
     <section class="hero-section">
+
         <div class="content-container">
             <h1 class="main-headline">إقامتكم الخاصة والفاخرة في جبال الألب تبدأ هنا!</h1>
             <p class="sub-headline">رحلات سياحية فاخرة إلى سويسرا والنمسا – مع إشراف باللغة العربية 100%.</p>
@@ -20,73 +21,65 @@
             <div class="media-placeholder">
                 <img src="alpen.jpg" alt="Luxuriöse Villen in den Alpen" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
             </div>
-            </section>
-<aside class="cta-form-container">
-    <h2>تحدث الآن مع مستشار السفر الخاص بك</h2>
 
-    <form id="whatsappForm">
-        <input type="text" id="name" name="name" placeholder="اسمك" required>
-        <input type="tel" id="whatsapp" name="whatsapp_number" placeholder="رقم واتساب (مثال: +971 50 123 4567)" required>
-        <input type="text" id="date" name="travel_date" placeholder="تاريخ السفر المفضل (اختياري)">
-        <button type="submit" class="cta-button">خطط لرحلتك الآن</button>
-    </form>
-
-    <div class="qr-code-block">
-        <h3>أو تواصل فوراً عبر مسح الكود:</h3>
-        <a href="[IHR_WHATSAPP_LINK]" target="_blank">
-            <img src="qr-code.png" alt="WhatsApp QR Code" class="qr-image">
-        </a>
-        <p class="qr-hint">اضغط على الكود للتواصل المباشر</p>
-    </div>
-</aside>
-
-  <div class="usp-container">
+            <div class="usp-container">
                 <div class="usp-item">
                     <img src="language_support.jpg" alt="Arabischsprachiger Support" class="usp-full-image">
-                    <p><strong>راحة اللغة الأم:</strong> إشراف ودعم عربي 100%.</p>
+                    <p><strong>راحة اللغة الأم:</strong> إشراف عربي.</p>
                 </div>
                 <div class="usp-item">
-                    <img src="family_mercedes.jpg" alt="Private V-Class Transfer" class="usp-full-image">
-                    <p><strong>رفاهية وخصوصية:</strong> فيلات ونقل خاص V-Class.</p>
+                    <img src="family_mercedes.jpg" alt="V-Class Transfer" class="usp-full-image">
+                    <p><strong>رفاهية وخصوصية:</strong> فيلات ونقل خاص.</p>
                 </div>
                 <div class="usp-item">
-                    <img src="halal_food.jpg" alt="Halal-Essen Garantie" class="usp-full-image">
-                    <p><strong>تفاهم ثقافي:</strong> حلال مضمون واحترام كامل للاحتياجات.</p>
+                    <img src="halal_food.jpg" alt="Halal-Garantie" class="usp-full-image">
+                    <p><strong>تفاهم ثقافي:</strong> حلال مضمون.</p>
                 </div>
             </div>
-            
         </div>
 
-        
+        <aside class="cta-form-container">
+            <h2>تحدث الآن مع مستشار السفر الخاص بك</h2>
+
+            <form id="whatsappForm">
+                <input type="text" id="name" name="name" placeholder="اسمك" required>
+                <input type="tel" id="whatsapp" name="whatsapp_number" placeholder="رقم واتساب (مثال: +971 50 123 4567)" required>
+                <input type="text" id="date" name="travel_date" placeholder="تاريخ السفر المفضل (اختياري)">
+                <button type="submit" class="cta-button">خطط لرحلتك الآن</button>
+            </form>
+
+            <div class="qr-code-block">
+                <h3>أو تواصل فوراً عبر مسح الكود:</h3>
+                <a href="https://wa.me/436601500001?text=مرحباً،%20أنا%20مهتم%20بعروضكم%20الخاصة%20بالرحلات%20إلى%20سويسرا%20والنمسا." target="_blank">
+                    <img src="qr-code.png" alt="WhatsApp QR Code" class="qr-image">
+                </a>
+                <p class="qr-hint">اضغط على الكود للتواصل المباشر</p>
+            </div>
         </aside>
-    </main>
+    </section>
 
     <footer>
         <p>&copy; 2024 Europe4you | الشروط والأحكام | سياسة الخصوصية</p>
     </footer>
-<script>
-    // **********************************************
-    // 1. ANPASSEN: Ihre WhatsApp-Nummer (ohne +)
-    // **********************************************
-    const WHATSAPP_NUMBER = '436601500001';
 
-    // Holt das Formular über seine ID
+<script>
+    // WhatsApp-Funktionalität
     const form = document.getElementById('whatsappForm');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Verhindert das Standard-Senden des Formulars
+        event.preventDefault();
 
-        // 2. Holt die Daten aus den Feldern über ihre IDs
+        // WhatsApp-Nummer
+        const WHATSAPP_NUMBER = '436601500001';
+
         const name = document.getElementById('name').value;
         const whatsapp = document.getElementById('whatsapp').value;
         const date = document.getElementById('date').value;
 
-        // 3. Erstellt die Nachricht im Klartext
         let message = `*استفسار جديد عبر الموقع (Europe4you)*\n\n`;
         message += `الإسم: ${name}\n`;
         message += `رقم الواتساب: ${whatsapp}\n`;
 
-        // Fügt das Reisedatum nur hinzu, wenn es ausgefüllt wurde
         if (date) {
             message += `تاريخ السفر المفضل: ${date}\n\n`;
         } else {
@@ -95,32 +88,12 @@
 
         message += `أرجو تزويدي بالمعلومات والتفاصيل عن الرحلات الفاخرة في جبال الألب. شكراً جزيلاً.`;
 
-        // 4. Kodiert die Nachricht für die URL
         const encodedMessage = encodeURIComponent(message);
+        const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
-        // 5. Erstellt den finalen WhatsApp-Link
-        const whatsappLink = `https://wa.me/${436601500001}?text=${encodedMessage}`;
-
-        // 6. Leitet den Benutzer weiter
         window.location.href = whatsappLink;
     });
 </script>
+
 </body>
 </html>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
