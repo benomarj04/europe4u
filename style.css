@@ -141,9 +141,8 @@ footer {
 
 /* Media Query für Mobile (Stapelt die Sektionen) */
 @media (max-width: 900px) {
-    .hero-section {
-        flex-direction: column;
-    }
+    /* ... andere Regeln ... */
+
 
     .content-container {
         padding-right: 0;
@@ -152,8 +151,8 @@ footer {
 
     .cta-form-container {
         width: 100%;
-        order: -1; /* Setzt das Formular über den Inhalt auf Mobile */
-        margin-bottom: 30px;
+        
+     margin-bottom: 30px;
     }
 
     .usp-item {
@@ -207,4 +206,5 @@ footer {
     font-size: 0.85em;
     color: #5cb85c; /* WhatsApp-Grün */
     margin-top: 10px;
+
 }
