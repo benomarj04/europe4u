@@ -22,11 +22,12 @@ header {
 /* Hauptlayout mit Fokus auf das Formular */
 .hero-section {
     display: flex;
-    flex-wrap: wrap; /* Ermöglicht den Zeilenumbruch auf kleineren Bildschirmen */
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 30px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
+    flex-direction: row; /* <--- Dies stellt sicher, dass der Inhalt links steht */
 }
+
 
 .content-container {
     flex: 2; /* Nimmt mehr Platz ein als das Formular */
@@ -220,6 +221,7 @@ footer {
     margin-top: 10px;
 
 }
+
 
 
 
