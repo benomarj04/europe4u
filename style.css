@@ -142,7 +142,9 @@ footer {
 /* Media Query für Mobile (Stapelt die Sektionen) */
 @media (max-width: 900px) {
     /* ... andere Regeln ... */
-
+.main-headline {
+        font-size: 2em; /* Verkleinert die Headline auf Handys, z.B. von 2.5em auf 2em */
+    }
 
     .content-container {
         padding-right: 0;
@@ -208,3 +210,4 @@ footer {
     margin-top: 10px;
 
 }
+
