@@ -178,11 +178,14 @@ footer {
     margin-left: 10px;
 }
 /* Styling für den WhatsApp QR-Code */
+
 .qr-code-block {
-    text-align: center;
+    text-align: center; /* <-- DIESE ZEILE ZENTRIERT DEN INHALT */
     margin-top: 25px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #444; /* Angepasst an dunkles Design */
+}
+
 }
 
 .qr-code-block h3 {
@@ -210,4 +213,5 @@ footer {
     margin-top: 10px;
 
 }
+
 
