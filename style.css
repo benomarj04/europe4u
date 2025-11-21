@@ -1,3 +1,4 @@
+
 /* ================================================= */
 /* 1. Globale Stile & RTL-Anpassungen (Dark Mode)  */
 /* ================================================= */
@@ -29,22 +30,23 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     padding: 30px 5%;
-    flex-direction: row; /* Wichtig: Content links, Formular rechts */
+    flex-direction: row;
 }
 
 .content-container {
     flex: 2; /* Nimmt mehr Platz ein als das Formular */
     min-width: 300px;
+    order: 1; /* WICHTIG: Erscheint IMMER zuerst */
 }
 
 /* RTL-Anpassung: Padding für den Inhalt */
 [dir="rtl"] .content-container {
-    padding-right: 0; /* Rechts Padding entfernen */
-    padding-left: 40px; /* Links Padding hinzufügen */
+    padding-right: 0;
+    padding-left: 40px;
 }
 
 .main-headline {
-    color: #FFD700; /* Gold-Akzent */
+    color: #FFD700;
     font-size: 2.5em;
     margin-bottom: 10px;
 }
@@ -73,13 +75,12 @@ header {
 }
 
 .usp-item {
-    flex-basis: calc(33.33% - 13.333px); /* Exaktere 3er-Teilung */
+    flex-basis: calc(33.33% - 13.333px);
     padding: 0;
     line-height: 1.4;
-    background-color: #2a2a2a; /* Hintergrund der Box */
+    background-color: #2a2a2a;
     border-radius: 8px;
     overflow: hidden;
-    /* Flex-Eigenschaften für Bild (oben) und Text (unten) */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,7 +90,7 @@ header {
 /* USP BILDER */
 .usp-full-image {
     width: 100%;
-    height: 120px; /* Feste Höhe für alle Bilder */
+    height: 120px;
     object-fit: cover;
     border-radius: 8px 8px 0 0;
 }
@@ -98,20 +99,18 @@ header {
 .usp-item p {
     font-size: 0.9em;
     color: #f0f0f0;
-    /* Layout und Padding, damit der Text unter dem Bild sitzt */
-    padding: 10px 10px 15px 10px; /* Oben/Rechts/Unten/Links */
+    padding: 10px 10px 15px 10px;
     width: 100%;
     text-align: center;
     box-sizing: border-box;
-    /* Stellt sicher, dass die Textfelder gleich hoch sind */
     display: flex;
-    align-items: flex-start; /* Text oben beginnen lassen */
+    align-items: flex-start;
     justify-content: center;
     flex-grow: 1;
 }
 
 /* ================================================= */
-/* 4. CTA Formular (Rechts)                        */
+/* 4. CTA Formular (Soll ZULETZT kommen)           */
 /* ================================================= */
 .cta-form-container {
     flex: 1;
@@ -121,6 +120,7 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     height: fit-content;
+    order: 2; /* WICHTIG: Erscheint IMMER nach dem Inhalt (order: 1) */
 }
 
 .cta-form-container h2 {
@@ -135,7 +135,7 @@ form input {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #444; /* Hellerer Rand auf dunklem Grund */
+    border: 1px solid #444;
     background-color: #333;
     color: #f0f0f0;
     border-radius: 4px;
@@ -145,7 +145,7 @@ form input {
 .cta-button {
     width: 100%;
     padding: 15px;
-    background-color: #FFD700; /* Gold-Akzent */
+    background-color: #FFD700;
     color:#1a1a1a;
     font-size: 1.1em;
     font-weight: bold;
@@ -232,6 +232,7 @@ footer {
     }
 
     .usp-full-image {
-        height: 150px; /* Etwas höhere Bilder auf Mobil */
+        height: 150px;
     }
 }
+
