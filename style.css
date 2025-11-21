@@ -1,0 +1,210 @@
+/* Globale Stile & RTL-Anpassungen */
+body {
+    font-family: Arial, sans-serif; /* Platzhalter, sollte durch eine bessere Schriftart ersetzt werden */
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* dunkles Hintergrund */
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #000;
+    padding: 15px 5%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    max-height: 50px;
+    /* Da das Logo schwarz ist, passt es gut zu fast allen Designs */
+}
+
+/* Hauptlayout mit Fokus auf das Formular */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap; /* Ermöglicht den Zeilenumbruch auf kleineren Bildschirmen */
+    padding: 30px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-container {
+    flex: 2; /* Nimmt mehr Platz ein als das Formular */
+    min-width: 300px; /* Stellt sicher, dass es auf kleinen Screens nicht zu schmal wird */
+    padding-right: 40px;
+}
+
+.main-headline {
+    color: #FFD700; /* Tiefes Blau für Seriosität */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.sub-headline {
+    color: #bbb;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.media-placeholder {
+    background-color: #ddd;
+    min-height: 350px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Hier würden Sie Ihr Video oder Bild einfügen */
+}
+
+/* USPs */
+.usp-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.usp-item {
+    flex-basis: calc(33.3% - 20px); /* Leicht vergrößert, um mehr Platz zu bieten */
+    padding: 20px 15px; /* Innenabstand vergrößert */
+    line-height: 1.4; /* Zeilenabstand für bessere Lesbarkeit */
+    min-height: 120px; /* Mindesthöhe für Einheitlichkeit */
+    /* ... restliche Stile ... */
+}
+
+
+.usp-item p {
+    font-size: 0.95em; /* Macht den Text etwas kompakter */
+    margin: 0;
+}
+
+
+/* CTA Formular */
+.cta-form-container {
+    flex: 1; /* Nimmt weniger Platz ein */
+    min-width: 280px;
+    background-color: #2a2a2a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: fit-content; /* Passt sich der Größe des Inhalts an */
+}
+
+.cta-form-container h2 {
+    color: #FFD700;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Wichtig für korrekte Breite */
+}
+
+.cta-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #FFD700; /* Auffällige Akzent-Farbe */
+    color:#1a1a1a;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d8892d;
+}
+
+.form-hint {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* Media Query für Mobile (Stapelt die Sektionen) */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .content-container {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .cta-form-container {
+        width: 100%;
+        order: -1; /* Setzt das Formular über den Inhalt auf Mobile */
+        margin-bottom: 30px;
+    }
+
+    .usp-item {
+        flex-basis: 100%;
+    }
+}
+
+/* Spezielle Anpassung für Arabisch (RTL-Unterstützung) */
+[dir="rtl"] .content-container {
+    padding-right: 0;
+    padding-left: 40px; /* Padding wird umgedreht */
+}
+
+[dir="rtl"] .usp-item {
+    border-left: none;
+    border-right: 4px solid #f9a03f;
+}
+
+[dir="rtl"] .usp-item .icon {
+    margin-right: 0;
+    margin-left: 10px;
+}
+/* Styling für den WhatsApp QR-Code */
+.qr-code-block {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.qr-code-block h3 {
+    font-size: 1.1em;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.qr-image {
+    max-width: 150px;
+    height: auto;
+    border: 5px solid #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.qr-image:hover {
+    transform: scale(1.05);
+}
+
+.qr-hint {
+    font-size: 0.85em;
+    color: #5cb85c; /* WhatsApp-Grün */
+    margin-top: 10px;
+}
